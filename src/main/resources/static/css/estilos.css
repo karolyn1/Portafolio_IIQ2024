@@ -78,3 +78,8 @@
 #tablaResumen tr:nth-child(even) {
     background-color: coral;
 }
+
+p{
+    text-align: center;
+    width: 60px;
+}
