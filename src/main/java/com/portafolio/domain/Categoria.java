@@ -18,13 +18,15 @@ public class Categoria implements Serializable {
     private String descripcion;
     private String rutaImagen; //al final hibernate lo transfroma en ruta imagen
     private boolean activo;
-    
-    public Categoria(String description, String rutaImagen, boolean activo) {
-        this.descripcion = descripcion;
-        this.rutaImagen = rutaImagen;
-        this.activo = activo;
+
+    public Categoria() {
     }
     
     
+    public Categoria(String descripcion, String rutaImagen, boolean activo) {
+        this.descripcion = descripcion;
+        this.rutaImagen = rutaImagen;
+        this.activo = activo;
+    }  
     
 }
