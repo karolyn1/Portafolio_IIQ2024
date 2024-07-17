@@ -3,6 +3,7 @@ package com.portafolio.serviceimpl;
 
 import com.portafolio.dao.CategoriaDao;
 import com.portafolio.domain.Categoria;
+import com.portafolio.domain.Producto;
 import com.portafolio.service.CategoriaService;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,5 @@ public class CategoriaServiceImpl implements CategoriaService{
     public void delete(Categoria categoria) {
         categoriaDao.delete(categoria);
     }
+    
 }

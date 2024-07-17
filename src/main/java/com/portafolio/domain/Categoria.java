@@ -1,16 +1,17 @@
-
 package com.portafolio.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 @Data //automatica me crea set and get
 @Entity
-@Table(name="categoria")
+@Table(name = "categoria")
 public class Categoria implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
@@ -21,12 +22,15 @@ public class Categoria implements Serializable {
 
     public Categoria() {
     }
-    
-    
+
     public Categoria(String descripcion, String rutaImagen, boolean activo) {
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
         this.activo = activo;
-    }  
+    }
+
+    @OneToMany //una categoria muchos productos, en categoria no cambiamos ningun priducto, 
+    @JoinColumn(name = "id_categoria", insertable =false, updatable =false)
+    List<Producto> productos;
     
 }
